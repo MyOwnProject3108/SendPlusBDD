@@ -19,18 +19,8 @@ public class SignUpPage extends Base {
 
     String randomEmailGenerated;
     String fullRandomEmailGenerated;
-  //  String ranEmail = "myownemail";
 
 
-
-
-
- /*   public void generaterandomFirstName(String randomFirstName){
-       String firstNameGenerated = randomFirstName+randomInt;
-        getDriver().findElement(By.xpath("//input[@placeholder='First Name']")).sendKeys(firstNameGenerated);
-
-
-    }*/
 
 /*
     public void signUp() throws InterruptedException {
