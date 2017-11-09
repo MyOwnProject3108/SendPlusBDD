@@ -8,6 +8,8 @@ import java.util.Random;
 public class SignUpPage extends Base {
     public static Random random = new Random();
     int randomInt = random.nextInt(10000);
+
+
     private static By fName = By.xpath("//input[@placeholder='First Name']");
     private static By surName = By.xpath("//input[@placeholder='Surname']");
     private static By email = By.xpath("//input[@placeholder='Email']");
@@ -23,6 +25,7 @@ public class SignUpPage extends Base {
 
 
 
+
     public void navigateToSignUpPage(String url){
 
         getDriver().get(url);
@@ -33,22 +36,23 @@ public class SignUpPage extends Base {
 
         getDriver().findElement(fName).sendKeys(firstName+randomInt);
         getDriver().findElement(surName).sendKeys(surName1+randomInt);
-         randomEmailGenerated = testEmail+randomInt;
+        randomEmailGenerated = testEmail+randomInt;
 
-        getDriver().findElement(email).sendKeys(randomEmailGenerated+ "@test.com");
+        getDriver().findElement(email).sendKeys(randomEmailGenerated+ "@mailinator.com");
         getDriver().findElement(password).sendKeys(testPassword);
         getDriver().findElement(confirmPassword).sendKeys(testConfirmpassword);
         getDriver().findElement(termsConf).click();
         Thread.sleep(10000);
         getDriver().findElement(submitForm).click();
-        Thread.sleep(60000);
+        Thread.sleep(60000); //Sometimes Signup fails as it's known issue in S+ so I had to add sleep......
 
 
     }
 
-    public String generateRandom(String ranEmail){
+    public String generateRandom(){
 
-        fullRandomEmailGenerated = randomEmailGenerated+"@test.com";
+        fullRandomEmailGenerated = randomEmailGenerated+"@mailinator.com";
+        System.out.println("printing fullemail..."+ fullRandomEmailGenerated);
         return fullRandomEmailGenerated;
 
 

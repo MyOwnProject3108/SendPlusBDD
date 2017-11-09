@@ -15,6 +15,7 @@ public class Base {
 
 
 
+
     public void initialise(){
         driver = new FirefoxDriver();
         driver.manage().window().maximize();

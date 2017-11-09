@@ -19,6 +19,7 @@ public class StepDefs{
     LoginPage loginPage = new LoginPage();
     Incoming incoming = new Incoming();
 
+
     String fullRandomEmailGenerated;
 
 
@@ -99,11 +100,13 @@ public class StepDefs{
     }
 
 
-    @Then("^I navigate to \"(.*?)\" page with random email \"(.*?)\"$")
-    public void i_navigate_to_page_with_random_email(String page, String ranEmailText) throws Throwable {
+    @Then("^I navigate to \"(.*?)\" page with random email$")
+    public void i_navigate_to_page_with_random_email(String page) throws Throwable {
 
-          fullRandomEmailGenerated= signUpPage.generateRandom(ranEmailText);
+          fullRandomEmailGenerated= signUpPage.generateRandom();
          resendActivation.resendActivation(page, fullRandomEmailGenerated);
+
+
 
     }
 
@@ -120,9 +123,13 @@ public class StepDefs{
 
     }
 
+
+
     @After
     public void stop(){
         System.out.println("After hook-----------------------------------");
         base.closeBrowser();
     }
+
+
 }

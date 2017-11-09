@@ -24,10 +24,11 @@ Feature: Sendplus Signup or login functionality
       |firstName|surName  |email     |password |confrimPassword|
       |qaFName  |qasurName|myownemail|you002   |you002         |
     And I should be on the "confirmregistration" page
-    And I navigate to "https://app.sendplus.com/#/confirmregistration/resendactivationemail/" page with random email "myownemail"
+    And I navigate to "https://app.sendplus.com/#/confirmregistration/resendactivationemail/" page with random email
     And I should be on the "resendactivationemail" page
     And I click on "here" link
     Then I should be on the "confirmregistration" page
+
 
 
   @Invalidlogin
@@ -65,8 +66,6 @@ Feature: Sendplus Signup or login functionality
     Then I should be on the "incoming" page
     When I select "Completed" transfers from the dropdown
     Then I should see "Received" trasnfers
-
-
 
 
 
