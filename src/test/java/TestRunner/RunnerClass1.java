@@ -12,8 +12,8 @@ import com.cucumber.listener.Reporter;
 
 @RunWith(Cucumber.class)
 @CucumberOptions (features = "src/test/java/Resources",glue = "Defs",
-        plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/extentreports/report.html"}
-        )
+        plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/extentreports/report.html"},
+        tags= {"@Invalidlogin"})
 public class RunnerClass1 {
 
    @AfterClass

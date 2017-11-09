@@ -14,34 +14,12 @@ public class SignUpPage extends Base {
     private static By password = By.xpath("//input[@placeholder='Password']");
     private static By confirmPassword = By.xpath("//input[@placeholder='Password again']");
     private static By termsConf = By.xpath("//input[@type='checkbox']");
-    //private static By submitForm = By.xpath("//input[@type='submit']");
     private static By submitForm = By.xpath("//input[@value= 'Sign Up']");
 
     String randomEmailGenerated;
     String fullRandomEmailGenerated;
 
 
-
-/*
-    public void signUp() throws InterruptedException {
-
-
-//        int randomInt = random.nextInt(100000);
-        getDriver().findElement(fName).sendKeys("nov005" + randomInt);
-        getDriver().findElement(surName).sendKeys("nov105" + randomInt);
-        getDriver().findElement(email).sendKeys("3Novtodaytra"+randomInt+"@test.com");
-        getDriver().findElement(password).sendKeys("you002");
-        getDriver().findElement(confirmPassword).sendKeys("you002");
-        getDriver().findElement(termsConf).click();
-        getDriver().findElement(submitForm).click();
-        Thread.sleep(10000);
-
-     /*   String actualUrl = driver.getCurrentUrl();
-        System.out.println("actualUrl URL..."+ actualUrl);
-        Assert.assertEquals(actualUrl, "https://app.sendplus.com/#/confirmregistration/notice");*/
-
-
-    //}
 
 
 

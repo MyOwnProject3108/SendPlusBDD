@@ -8,9 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by Faiyyaz.Shaik on 11/2/2017.
- */
+
 public class Base {
 
     public static WebDriver driver;
@@ -27,6 +25,7 @@ public class Base {
 
     public WebDriver getDriver()
     {
+
         return driver;
     }
 
@@ -34,6 +33,7 @@ public class Base {
     public void closeBrowser() {
 
         driver.quit();
+
     }
 
 
@@ -42,6 +42,7 @@ public class Base {
         boolean textPresent = getDriver().getCurrentUrl().contains(text);
         Assert.assertTrue(textPresent);
     }
+
 
 
 }

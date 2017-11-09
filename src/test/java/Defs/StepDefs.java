@@ -37,10 +37,6 @@ public class StepDefs{
 
     }
 
-//    @When("^I fill up the form$")
-//    public void i_fill_up_the_form() throws Throwable {
-//        signUpPage.signUp();
-//    }
 
     @When("^I fill up the form with the following details$")
     public void i_fill_up_the_form_with_the_following_details(DataTable arg1) throws Throwable {
@@ -107,8 +103,6 @@ public class StepDefs{
     public void i_navigate_to_page_with_random_email(String page, String ranEmailText) throws Throwable {
 
           fullRandomEmailGenerated= signUpPage.generateRandom(ranEmailText);
-
-
          resendActivation.resendActivation(page, fullRandomEmailGenerated);
 
     }
