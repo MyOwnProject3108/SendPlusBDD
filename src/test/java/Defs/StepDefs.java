@@ -156,7 +156,7 @@ public class StepDefs{
     }
 
 
-    @When("^I should be navigated to \"(.*?)\" page$")
+    @Then("^I should be navigated to \"(.*?)\" page$")
     public void i_should_be_navigated_to_page(String page) throws Throwable {
         base.navigateToPage(page);
     }

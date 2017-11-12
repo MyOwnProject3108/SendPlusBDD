@@ -93,6 +93,12 @@ Feature: Sendplus Signup or login functionality
           |firstName|surName  |email      |password |confirmPwd     |message|
           |         |qasurName| myownemail|you002   |you002         |Required field|
           |qaFNam   |         | myownemail|you002   |you002         |Required field|
+          | qaFNam  |qasurName|           |you002   |you002         |Email is invalid|
+          | qaFNam  |qasurName|myownemail | you0002 |you002         |The passwords do not match, please try again  |
+
+
+
+
 
 
 

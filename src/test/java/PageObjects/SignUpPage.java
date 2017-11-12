@@ -14,20 +14,16 @@ public class SignUpPage extends Base {
     private static By fName = By.xpath("//input[@placeholder='First Name']");
     private static By surName = By.xpath("//input[@placeholder='Surname']");
     private static By email = By.xpath("//input[@placeholder='Email']");
+    private static By emailValidation = By.xpath("//input[@name='email']");
     private static By password = By.xpath("//input[@placeholder='Password']");
     private static By confirmPassword = By.xpath("//input[@placeholder='Password again']");
     private static By termsConf = By.xpath("//input[@type='checkbox']");
     private static By submitForm = By.xpath("//input[@value= 'Sign Up']");
 
     private static By signInForm = By.xpath("//button[@class='btn btn-primary']");
-    private static By validationText = By.xpath("//span[@class= 'ng-binding']");
+
 
     public  String emailgenerated;
-
-
-
-
-
 
 
     public void navigateToSignUpPage(String url){
@@ -57,7 +53,7 @@ public class SignUpPage extends Base {
 
         getDriver().findElement(fName).sendKeys(firstName);
         getDriver().findElement(surName).sendKeys(surName1);
-        getDriver().findElement(email).sendKeys(email1 + "@mailinator.com");
+        getDriver().findElement(emailValidation).sendKeys(email1 + "@mailinator.com");
         getDriver().findElement(password).sendKeys(testPassword1);
         getDriver().findElement(confirmPassword).sendKeys(testConfirmpassword1);
         getDriver().findElement(termsConf).click();
@@ -86,13 +82,6 @@ public class SignUpPage extends Base {
 
     }
 
-//    public void openEmail(String openEmailPage) {
-//        getDriver().get(openEmailPage+ emailgenerated+"#"+"/"+"msgpane"+"#");
-//        System.out.println(openEmailPage+ emailgenerated+"#"+"/"+"#"+"msgpane");
-//
-//
-//    }
-
 
     public void resendActivation( String page, String emailgenerated) {
 
@@ -116,7 +105,7 @@ public class SignUpPage extends Base {
 
 
     public void verifyValidationMsg(String msg) {
-        String actualMessage = getDriver().findElement(validationText).getText();
+        String actualMessage = getDriver().findElement(By.xpath("//span[contains(text(), '"+msg+"')]")).getText();
         Assert.assertEquals(actualMessage,msg);
     }
 }
