@@ -12,7 +12,7 @@ public class Incoming extends Base {
     private static By userProf = By.xpath("//div[@class = 'user_name dropdown-toggle']");
     private static By signOutClick = By.xpath("//div[@class = 'btn btn-link']");
     private static By clickSelectDropDown = By.xpath("//div[@class='filters']//select[@ng-model='status']");
-    private static By verifyTransferStatus = By.xpath("//div[@class = 'transfer_progress_info row']//div[contains(text(), 'Received')]");
+
 
 
 
@@ -31,7 +31,9 @@ public class Incoming extends Base {
 
 
     public void verifyTransferStatus(String expectedStauts) {
-        String actualStatus = getDriver().findElement(verifyTransferStatus).getText();
+
+        String actualStatus =  getDriver().findElement(By.xpath("//div[@class = 'transfer_progress_info row']//div[contains(text(),'"+expectedStauts+"' )]")).getText();
+
         Assert.assertEquals(actualStatus, expectedStauts);
 
 

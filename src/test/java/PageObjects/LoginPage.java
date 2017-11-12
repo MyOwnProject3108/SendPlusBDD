@@ -6,6 +6,9 @@ import org.openqa.selenium.By;
 
 public class LoginPage extends Base{
 
+    SignUpPage signUpPage = new SignUpPage();
+
+
     private static By userName = By.xpath("//input[@placeholder='Email']");
     private static By pwd = By.xpath("//input[@placeholder='Password']");
     private static By signInForm = By.xpath("//button[@class='btn btn-primary']");
@@ -13,12 +16,14 @@ public class LoginPage extends Base{
     private static By userNameValidation = By.xpath("//div[@class='help-block']/span");
 
 
-    public void login(String username, String password) throws InterruptedException {
+    public String login(String emailgenerated, String password) throws InterruptedException {
 
-        getDriver().findElement(userName).sendKeys(username);
+
+        getDriver().findElement(userName).sendKeys(emailgenerated);
         getDriver().findElement(pwd).sendKeys(password);
         getDriver().findElement(signInForm).click();
         Thread.sleep(10000);
+        return emailgenerated;
     }
 
     public void verifyLoginFailedMsg(String expectedMsg){
@@ -34,10 +39,15 @@ public class LoginPage extends Base{
 
     }
 
+
+
+
     public void ReLogin(String u, String p)throws InterruptedException{
         getDriver().findElement(userName).sendKeys(u);
         getDriver().findElement(pwd).sendKeys(p);
         getDriver().findElement(signInForm).click();
         Thread.sleep(10000);
     }
+
+
 }

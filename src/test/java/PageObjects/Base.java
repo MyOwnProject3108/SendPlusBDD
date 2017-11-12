@@ -14,8 +14,6 @@ public class Base {
     public static WebDriver driver;
 
 
-
-
     public void initialise(){
         driver = new FirefoxDriver();
         driver.manage().window().maximize();
@@ -42,6 +40,13 @@ public class Base {
     public void verifyUrlText(String text){
         boolean textPresent = getDriver().getCurrentUrl().contains(text);
         Assert.assertTrue(textPresent);
+    }
+
+
+
+    public void navigateToPage(String page) {
+
+        getDriver().get(page);
     }
 
 
